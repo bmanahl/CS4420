@@ -1,6 +1,7 @@
 <?php
 	$str_browser_language = !empty($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? strtok(strip_tags($_SERVER['HTTP_ACCEPT_LANGUAGE']), ',') : '';
 	$str_browser_language = !empty($_GET['language']) ? $_GET['language'] : $str_browser_language;
+  include('login.php');
 
 ?>
 
@@ -356,7 +357,7 @@
                 <label><b>Password</b></label> 
                 <input type="password" placeholder="Enter Password" name="psw" required> 
   
-                <button type="submit">Login</button> 
+                <button type="submit" formaction="login.php">Login</button> 
                 <input type="checkbox" checked="checked"> Remember me 
             </div> 
   
