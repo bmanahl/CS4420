@@ -349,7 +349,7 @@
             <div class="imgcontainer"> 
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> 
             </div> 
-          <form id='login' action='login.php' method='post' accept-charset='UTF-8'>
+          <form action='login.php' method='post'>
             <div class="container"> 
                 <label><b>Username</b></label> 
                 <input type="text" placeholder="Enter Username" name="uname" required> 
