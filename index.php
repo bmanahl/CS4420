@@ -357,7 +357,7 @@
                 <label><b>Password</b></label> 
                 <input type="password" placeholder="Enter Password" name="psw" required> 
   
-                <button type="submit" formaction="login.php">Login</button> 
+                <button type="submit" formaction="login.php" method="post">Login</button> 
                 <input type="checkbox" checked="checked"> Remember me 
             </div> 
   
