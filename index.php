@@ -4,10 +4,9 @@
   include('login.php');
   include('logout.php');//add logout button
   include('register.php');
-
   session_start();//ensures whole website has session
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -201,6 +200,11 @@
   }
    
    
+.glyphicon.glyphicon-home {
+       font-size: 45px;
+    }
+
+
     input[type=text], 
     input[type=password] { 
         width: 100%; 
@@ -334,28 +338,26 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Logo</a>
+      <a class="nav-link" href="#"><span class="glyphicon glyphicon-home" aria-hidden="false"></span></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about">ABOUT</a></li>
-		<li><a href="#mission">MISSION</a></li>
-        <li><a href="#values">VALUES</a></li>
+	<li><a href="#mission">MISSION</a></li>
+        <li><a href="#values">CORE BELIEFS</a></li>
         <li><a href="#events">EVENTS</a></li>
         <li><a href="#contact">CONTACT</a></li>
-
-<!-- add php session detection to remove login and sighup button if logged in and add logout button-->
 		
 		<!--login button-->
 		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> 
   
         <div id="id01" class="modal"> 
   
-        <form class="modal-content animate" action="/login.php" method='post'> 
+        <form class="modal-content animate" action="/login.php"> 
             <div class="imgcontainer"> 
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> 
             </div> 
-
+  
             <div class="container"> 
                 <label><b>Username</b></label> 
                 <input type="text" placeholder="Enter Username" name="uname" required> 
@@ -363,13 +365,13 @@
                 <label><b>Password</b></label> 
                 <input type="password" placeholder="Enter Password" name="psw" required> 
   
-                <button type="submit" name="login-submit">Login</button> 
+                <button type="submit" formaction="login.php">Login</button> 
                 <input type="checkbox" checked="checked"> Remember me 
             </div> 
   
-            <div class="container" style="background-color:#f1f1f1"> 
+            <div class="container" style="background-color:#f21414"> 
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> 
-                <span class="psw">Forgot <a href="/forgot_pwd.php">password?</a></span> 
+                <span class="psw">Forgot <a href="#">password?</a></span> 
             </div> 
         </form> 
     </div> 
@@ -388,28 +390,19 @@
   
     <div id="id02" class="modal"> 
   
-
-      <form class="modal-content animate" action="/register.php"> 
+      <form class="modal-content animate" action="/login.php"> 
          <div class="imgcontainer"> 
              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span> 
          </div> 
   
-         <!-- add echo error messages that match url error messages when user fails to fill in field properly-->
-
          <div class="container"> 
             <label><b>Create Username</b></label> 
             <input type="text" placeholder="New Username" name="uname" required> 
-
-            <label><b>Email</b></label> 
-            <input type="email" placeholder="Email" name="email" required>
   
             <label><b>Create Password</b></label> 
             <input type="password" placeholder="New Password" name="psw" required> 
-
-            <label><b>Confirm Password</b></label> 
-            <input type="password" placeholder="Confirm Password" name="con_psw" required>
   
-            <button type="submit" name="signup-submit">SignUp</button> 
+            <button type="submit">SignUp</button> 
          </div> 
   
          <div class="container" style="background-color:#f1f1f1"> 
@@ -434,34 +427,41 @@
 
 <div class="jumbotron text-center">
   <h1>Moms Against Articial Intelligence (AI)</h1> 
-  <p>(catchy phrase)</p> 
+  <p>The robots are coming...</p> 
 </div>
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
-      <h2>About Company Page</h2><br>
-      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h2>Welcome, but please don't be a binary stranger</h2><br>
+      <h4>Moms Against AI is the latest to wage war against those darn AI robots</h4><br>
+      <p>Raising kids now of days is simply hard enough to deal with in ever day life and it's hard to keep up with all this darn technology. 
+	Technology is good up to a point and we don't need any darn robots messin around with a good thing or better known as modern day society. 
+	If you are like the many moms out there who have already joined the fight because they dont to walk a robot dog, they don't need a computer 
+	teaching them Spanish, they certainly don't need a robot to shop for them, and they don't think robots are funny...at all. So if you aren't 
+	with us, that means that you ARE WITH THEM!</p>
       <br><button class="btn btn-default btn-lg">Get in Touch</button>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
+     <img src="https://02varvara.files.wordpress.com/2008/06/we-can-do-it-rosie-the-riveter-us-wwii-poster.jpg" style="max-width:100%;" alt="">
     </div>
   </div>
 </div>
 
-<div id="mission" class="container-fluid bg-grey">
+<div id="mission" class="container-fluid bg-warning">
   <div class="row">
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+      <img src="https://media.giphy.com/media/zFHRIrAvWjHzO/giphy.gif" style="max-width:100%;" alt="">
     </div>
     <div class="col-sm-8">
-      <h2>Our Mission</h2><br>
-      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h2>Mission Statement</h2><br>
+      <h4>Your mission, should you choose to accept it, is to go out there and stop companies from developing AI for future savings, thus preventing smart robots. Let's face it, 
+	have you ever had a robot stomp on your chest like what is depicted by the caption? The answer depends, but probably not. Although this is just a 
+	cartoon, so was the Jetsons back in the 60's and look at what happened...Things started changing and now you can talk to your grand kids on 
+	that telephone while conversating and you can ride in a somewhat questionable vehicle without a driver, imagine that! It's only a matter of 
+	time before AI is implemented into robots properly leaving children like little Susey (depicted to the left) to be stomped on by a carefree robot who doesn't give a shit...This 
+	is unacceptable! We must prevent situations like this from ever taking place by going on that internet and spreading the bad news about those AI robots! </h4><br>
     </div>
   </div>
 </div>
@@ -469,74 +469,100 @@
 <!-- Container (Values Section) -->
 <div id="values" class="container-fluid text-center">
   <h2>Values</h2>
-  <h4>Why we support this cause</h4>
+  <h4>The 6 values of virtue</h4>
   <br>
   <div class="row slideanim">
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-off logo-small"></span>
       <h4>POWER</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>Power in numbers</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-heart logo-small"></span>
       <h4>LOVE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>Love thy neighbor, not thy AI robot</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>JOB DONE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <h4>FINISH THE JOB</h4>
+      <p>Show no mercy until all AI has been eradicated</p>
     </div>
   </div>
   <br><br>
   <div class="row slideanim">
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <h4>PROMOTE NATURE</h4>
+      <p>If it was good enough before AI, it's good enough now</p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <span class="glyphicon glyphicon-list-alt logo-small"></span>
+      <h4>KNOWLEDGE IS POWER</h4>
+      <p>In order to beat AI you must become AI through internet knowledge. Or purchase and memorize our AI encyclopedia, only $199</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <h4 style="color:#303030;">HARD WORK PAYS OFF</h4>
+      <p>With enough hard work put in, we can eliminate all AI together!</p>
     </div>
   </div>
 </div>
 
-<!-- Container (Events Section) -->
-<div id="events" class="container-fluid text-center bg-grey">
-  <h2>Events</h2><br>
-  <h4>What we want to accomplished</h4>
-  <div class="row text-center slideanim">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="paris.jpg" alt="Paris" width="400" height="300">
-        <p><strong>March Against Computers</strong></p>
-        <p>Yes</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="newyork.jpg" alt="New York" width="400" height="300">
-        <p><strong>Donor Luncheon</strong></p>
-        <p>Food</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
-        <p><strong>Etc.</strong></p>
-        <p>Etc.</p>
-      </div>
-    </div>
-  </div><br>
+
+
+
+
+ <!-- START THE FEATURETTES -->
+<div id="events" class="container-fluid text-center bg-warning">
+<h2>Events and Happenings</h2><br>
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-8 text-center">
+            <h2 class="featurette-heading">March Against Computers</h2>
+            <p class="lead">Get your Fight on and Protest AI! The time is now, protect future generations from AI takeover!</p>
+         <a href="" class="btn btn-warning">Protest</a>
+         </div>
+          <div class="col-md-4">
+            <img class="featurette-image img-fluid mx-auto" src="https://static01.nyt.com/images/2018/12/04/world/02france/02france-protest-3-facebookJumbo.jpg" alt="" width="400" height="300">
+
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-8 order-md-2 text-center">
+            <h2 class="featurette-heading">Donor Luncheons</h2>
+            <p class="lead">Eat, Drink and be Merry all while you discuss with other moms around your location of how to stop this AI invasion within your community</p>
+            <a href="/welcome/social" class="btn btn-warning">I'm hungry</a>
+          </div>
+          <div class="col-md-4 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="http://catalina-high-school-1960-grads.weebly.com/uploads/2/6/3/6/26365176/20190221-120327_orig.jpg" alt="" width="400" height="300">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-8 text-center">
+            <h2 class="featurette-heading">Newsletter</h2>
+            <p class="lead">Join the Newsletter and discover new events taking place in the world of AI</p>
+            <a href="/welcome/cultural" class="btn btn-warning">News</a>
+          </div>
+          <div class="col-md-4">
+            <img class="featurette-image img-fluid mx-auto" src="http://i.poweredtemplates.com/i/br/03/136/newsletter_template_b.jpg" alt="" width="400" height="300">
+          </div>
+        </div>
+
+
+
+        </div>
+
+</div><br>
+
   
-  <h2>What our supports say</h2>
+  <center><h2>QUOTES OF THE MONTH</h2></center>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -548,13 +574,13 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"This cause is the best. AI sucks"<br><span>Vice President, HP</span></h4>
+        <h4>"This website is the best of the best sir. AI is bad for Pawnee"<br><span>Leslie Knope, Vice President, HP</span></h4>
       </div>
       <div class="item">
-        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+        <h4>"Four words...Can AI grow beets?!"<br><span>Dwight Schrute, Salesman, Dunder Mifflin</span></h4>
       </div>
       <div class="item">
-        <h4>"Could I... BE any more happy with this cause?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+        <h4>"Could I...BE any more happy with this cause?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
       </div>
     </div>
 
@@ -577,9 +603,9 @@
   <div class="row">
     <div class="col-sm-5">
       <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Denver, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 7229867443</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> momsAgainstAI@gmail.com</p>
     </div>
       </div>
     </div>
@@ -600,10 +626,8 @@ $(document).ready(function(){
     if (this.hash !== "") {
       // Prevent default anchor click behavior
       event.preventDefault();
-
       // Store hash
       var hash = this.hash;
-
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
@@ -619,7 +643,6 @@ $(document).ready(function(){
   $(window).scroll(function() {
     $(".slideanim").each(function(){
       var pos = $(this).offset().top;
-
       var winTop = $(window).scrollTop();
         if (pos < winTop + 600) {
           $(this).addClass("slide");
