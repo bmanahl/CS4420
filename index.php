@@ -388,6 +388,7 @@
   
     <div id="id02" class="modal"> 
   
+
       <form class="modal-content animate" action="/register.php"> 
          <div class="imgcontainer"> 
              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span> 
